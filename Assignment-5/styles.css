@@ -1,0 +1,498 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+a,
+button,
+.menu__icon {
+  cursor: pointer;
+}
+
+:root {
+  --font-normal: 400;
+  --font-bold: 700;
+  --color-text-pri: #1d2c3c;
+  --color-bg-sec: #038e7d;
+  --color-text-sec: #ffffff;
+  --color-text-tetiary: #646e7a;
+  --color-line: #e0e6ea;
+  --font-size-small: 0.875rem;
+  --shadow-x-axis: rgba(0, 0, 0, 0.15) 0 0.4rem 0 -0.25rem;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f8fa;
+  font-family: "Lato", sans-serif;
+  line-height: 1.5;
+  font-weight: var(--font-normal);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============== Navigation bar: Logo and Nav links ============== */
+.nav__bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #f5f8fa;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 0.4rem 0 -0.25rem;
+  z-index: 1000;
+}
+
+/* Navigation list - mobile first styles */
+.nav__list {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 60px);
+  background-color: #f5f8fa;
+  padding: 2rem;
+  z-index: 999;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.nav__list.active {
+  transform: translateX(0);
+}
+
+.nav__list li {
+  margin: 1.5rem 0;
+}
+
+.nav__list a {
+  color: #1d2c3c;
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: block;
+  padding: 0.5rem 0;
+}
+
+.nav__list li:last-child {
+  border: 2px solid #646e7a;
+  border-radius: 4px;
+  width: fit-content;
+  padding: 0 0.8rem;
+}
+
+/* Mobile menu icon */
+.menu__icon {
+  width: 30px;
+  height: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.menu__icon span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #1d2c3c;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.menu__icon span:nth-child(1) {
+  top: 0;
+}
+.menu__icon span:nth-child(2) {
+  top: 8px;
+}
+.menu__icon span:nth-child(3) {
+  top: 16px;
+}
+
+/* Hamburger animation when active */
+.menu__icon.active span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 8px;
+}
+
+.menu__icon.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu__icon.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 8px;
+}
+
+/* ======== Checkout details: Basic info & pricing plan ======== */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin-top: 140px;
+  padding: 0 1rem;
+}
+
+.checkout {
+  display: grid;
+  grid-template-columns: 1fr;
+  box-shadow: 0 0.93rem 2.9rem 0 #2b404e18;
+  max-width: 892px;
+  border-radius: 8px;
+}
+
+.checkout__title {
+  text-shadow: 0 4px 3px rgba(0, 0, 0, 0.25);
+  font-weight: var(--font-normal);
+  font-size: 1.8rem;
+  padding: 2rem;
+}
+
+.checkout__title,
+.numbered__heading,
+label {
+  color: var(--color-text-pri);
+}
+
+.basic__info,
+.payment__info {
+  padding: 2rem;
+}
+
+.line {
+  border-top: 2px solid var(--color-line);
+  width: 100%;
+}
+
+.second__line {
+  border-top: 2px solid var(--color-line);
+  border-bottom: 2px solid var(--color-line);
+  width: 100%;
+}
+
+.numbered__heading {
+  position: relative;
+  padding-left: 2.5rem;
+  font-size: 1.12rem;
+  font-weight: var(--font-bold);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.numbered__heading::before {
+  content: attr(data-number);
+  position: absolute;
+  left: 0;
+  top: 37%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #548bc5;
+  color: #548bc5;
+  display: grid;
+  place-items: center;
+  font-size: var(--font-size-small);
+}
+
+/* All label & input boxes */
+label {
+  display: block;
+  font-size: 1.12rem;
+  margin-bottom: 0.2rem;
+}
+
+input {
+  border: none;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+  background-color: #edeff2;
+  outline: none;
+
+  &::placeholder {
+    font-family: var(--font-normal);
+    font-size: 0.75rem;
+  }
+
+  &:focus {
+    border: 1px solid var(--color-bg-sec);
+  }
+}
+
+.form__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.full__width {
+  grid-column: 1 / -1;
+  max-width: 320px;
+}
+
+/* Buy Button */
+.buy__wppusher {
+  padding: 0.8rem 0;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--color-bg-sec);
+  font-weight: var(--font-bold);
+  font-size: 1rem;
+  color: #fff;
+  margin: 3rem 0 0 0;
+}
+
+/*================== Help Support Styles ================= */
+.support__container {
+  font-size: var(--font-size-small);
+  margin: 1rem 0 0 2rem;
+  max-width: 17rem;
+  position: relative;
+}
+
+.support__link {
+  position: relative;
+  text-decoration: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    left: -14.3rem;
+    background: url("./assets/Mask.svg") no-repeat;
+    width: 5.25rem;
+    height: 5.25rem;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 200%;
+    height: 2px;
+    background-color: currentColor;
+  }
+}
+
+.grey__text,
+.grey__text > a {
+  color: var(--color-text-tetiary);
+}
+
+.powered__by {
+  font-size: 0.7rem;
+  width: 7.5rem;
+  border-radius: 0.3rem;
+  text-align: center;
+  background-color: var(--color-text-tetiary);
+  color: var(--color-text-se);
+  left: 50%;
+  margin: 0 auto 2rem auto;
+  color: var(--color-text-sec);
+
+  & .strip {
+    font-weight: 900;
+    font-size: 1rem;
+    vertical-align: middle;
+  }
+}
+
+/* Plan and Pricing (Smaller container: light blue Bg) */
+.checkout__plan {
+  background-color: #1179bf;
+  padding: 2rem;
+  color: var(--color-text-sec);
+  font-weight: var(--font-normal);
+  border-radius: 0 0 8px 8px;
+}
+
+.plan__content h3 {
+  font-size: 1.25rem;
+  font-weight: var(--font-bold);
+}
+
+/* ============ Checkout Price plan/details =========== */
+.price .price__amount {
+  font-size: 2.8rem;
+  font-weight: 300;
+}
+
+.price {
+  display: flex;
+  margin-top: -0.2rem;
+}
+
+.renewal__text {
+  max-width: 10rem;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.price__currency {
+  margin-top: 15px;
+  padding-right: 3px;
+  font-weight: var(--font-bold);
+  font-size: var(--font-size-small);
+}
+
+/* list of plan benefits (3 round-ticked bullets) */
+.benefit__list ul {
+  list-style: none;
+  font-size: 1rem;
+  font-weight: var(--font-normal);
+  line-height: 2rem;
+  margin: 1.5rem auto;
+
+  & li::before {
+    content: "";
+    padding-right: 30px;
+    padding-bottom: 20px;
+    background: url("./assets/bullet-circle.svg") no-repeat;
+  }
+}
+
+.switch__plan {
+  max-width: 12rem;
+  line-height: 1.7rem;
+
+  & a {
+    font-weight: var(--font-bold);
+    color: var(--color-text-sec);
+    text-decoration: underline;
+  }
+}
+
+.text__italic p {
+  font-style: italic;
+  font-size: 1.12rem;
+  padding-right: 2rem;
+}
+
+.seperating__line {
+  margin: 2rem auto;
+  opacity: 20.05%;
+  line-height: 2px;
+}
+
+.checkout__footer {
+  padding: 0 2rem;
+}
+
+span.italics__agency {
+  font-style: italic;
+}
+
+figure {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem auto 1rem auto;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+footer p {
+  text-align: center;
+  margin: 1rem 0 2rem 0;
+  color: var(--color-text-tetiary);
+}
+
+.terms {
+  color: #1179bf;
+  text-decoration: none;
+}
+
+/* ============ RWD: Media Queries ============ */
+
+@media (min-width: 768px) {
+  .checkout {
+    grid-template-columns: 65% 35%;
+    border-radius: 0;
+  }
+
+  .checkout__plan {
+    border-radius: 0;
+  }
+
+  .form__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .support__container {
+    margin: 1rem 0 0 7rem;
+  }
+
+  .buy__wppusher {
+    margin: 4.5rem 0 0 0;
+  }
+
+  .nav__bar {
+    justify-content: center;
+    gap: 40rem;
+    padding: 1rem;
+    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .menu__icon {
+    display: none;
+  }
+
+  .nav__list {
+    position: static;
+    height: auto;
+    padding: 0;
+    transform: none;
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    background-color: transparent;
+    width: auto;
+  }
+
+  .nav__list li {
+    margin: 0;
+  }
+
+  .nav__list a {
+    font-size: 0.875rem;
+    padding: 0;
+    position: relative;
+  }
+
+  /* Hover effect for desktop links */
+  .nav__list a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--color-bg-sec);
+    transition: width 0.3s ease;
+  }
+
+  .nav__list a:hover::after {
+    width: 100%;
+  }
+
+  /* Account button styles */
+  .nav__list li:last-child {
+    padding: 0.3rem 0.8rem;
+  }
+}

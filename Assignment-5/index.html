@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 5</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav class="nav__bar" aria-label="Main navigation">
+            <a href="#" class="logo">
+                <img src="wppusher-logo.svg" alt="WP Pusher Logo">
+            </a>
+
+            <ul class="nav__list">
+                <li><a href="#">Download</a></li>
+                <li><a href="#">Learn more</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Account</a></li>
+            </ul>
+
+            <div class="menu__icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="checkout">
+            <section class="checkout__form">
+                <h1 class="checkout__title">Checkout</h1>
+
+                <div class="line">
+                    <div class="basic__info">
+                        <h2 class="numbered__heading" data-number="1"> Your Basic Informaton</h2>
+                        <form role="form" action="#" method="post">
+                            <div class="form__grid">
+                                <div class="form__field">
+                                    <label for="first-name" class="first__name">First Name</label>
+                                    <input class="form__input" type="text" id="first-name" name="first-name"
+                                        placeholder="Jane" required>
+                                </div>
+                                <div class="form__field">
+                                    <label for="last-name" class="last__name">Last Name</label>
+                                    <input class="form__input" type="text" id="last-name" name="last-name"
+                                        placeholder="Doe" required>
+                                </div>
+                                <div class="form__field full__width">
+                                    <label for="email" class="email">Email</label>
+                                    <input class="form__input" type="email" id="email" name="email"
+                                        placeholder="johndoe@example.com" required>
+                                </div>
+                            </div>
+                    </div>
+
+                    </form>
+                </div>
+
+                <div class="second__line">
+                    <div class="payment__info">
+                        <h2 class="numbered__heading payment__heading" data-number="2"> Your Payment Information</h2>
+                        <form action="#" method="post">
+                            <div class="form__field">
+                                <label for="credit-card" class="credit__card">Credit Card</label>
+                                <input class="card__input" type="text" id="credit-card"
+                                    placeholder="Card Number&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;MM/YY &emsp;CCV"
+                                    pattern="[0-9\s]{13,19}" maxlength="26" inputmode="numeric" autocomplete="cc-number"
+                                    required>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="checkout__footer">
+                    <button class="buy__wppusher">Buy WP Pusher</button>
+                    <div class="support__container">
+                        <p>
+                            <strong>Need any help?</strong>
+                            <span class="grey__text">
+                                Don’t hesitate to <a class="support__link" href="#">contact</a> support!
+                            </span>
+                        </p>
+                    </div>
+                    <p class="powered__by">Powered by<span class="strip"> stripe</span></p>
+                </div>
+
+            </section>
+
+            <aside class="checkout__plan">
+                <div class="plan__content">
+                    <h3>Freelancer</h3>
+
+                    <div class="price">
+                        <span class="price__currency">$</span>
+                        <div>
+                            <span class="price__amount">99</span>
+                            <span class="price__period">/ year</span>
+                        </div>
+                    </div>
+                    <p class="renewal__text">Automatically renews after 1 year</p>
+                </div>
+
+                <div class="benefit__list">
+                    <ul>
+                        <li>Use on <strong>5</strong> client sites</li>
+                        <li>Private repositories</li>
+                        <li>Email support</li>
+                    </ul>
+                </div>
+
+                <p class="switch__plan">
+                    Need <strong>20</strong> client sites? <a href="#">Switch to the <span
+                            class="italics__agency">Agency</span> plan</a>
+                </p>
+
+                <hr class="seperating__line">
+
+                <blockquote class="text__italic">
+                    <p>FTP is horrible to deal with. <strong>WP Pusher</strong> solves that issue,
+                        and the customer support is awesome!
+                    </p>
+
+                    <figure class="reviewer">
+                        <img src="reviewer.svg" alt="reviewer image">
+                        <figcaption>Kirk Beard</figcaption>
+                    </figure>
+                </blockquote>
+
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2018 WP Pusher IVS · <a href="" class="terms">Terms of Service</a></p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuIcon = document.querySelector('.menu__icon');
+            const navList = document.querySelector('.nav__list');
+
+            menuIcon.addEventListener('click', () => {
+                menuIcon.classList.toggle('active');
+                navList.classList.toggle('active');
+            });
+
+            // Close menu when clicking a link (mobile only)
+            if (window.innerWidth < 769) {
+                const navLinks = document.querySelectorAll('.nav__list a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        menuIcon.classList.remove('active');
+                        navList.classList.remove('active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

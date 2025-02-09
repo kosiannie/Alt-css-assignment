@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-text-primary: #011c34;
+  --color-text-secondary: #737373;
+  --color-custom-green: #2ec4b6;
+}
+
+body {
+  line-height: 1.5;
+  background-color: #f7fdfc;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  min-height: 95vh;
+  place-items: center;
+}
+
+header {
+  padding: 2rem 0.5rem 0 1rem;
+}
+
+header h1,
+.title__description {
+  padding-left: 0.6rem;
+  margin-top: 1.5rem;
+}
+
+.title__description {
+  max-width: 500px;
+  color: #737373;
+  font-size: 1rem;
+  line-height: 1.56rem;
+
+  & p:nth-child(2) {
+    display: none;
+  }
+}
+
+section {
+  max-width: 600px;
+}
+
+.logo {
+  width: 5rem;
+  height: auto;
+
+  & img {
+    width: 100%;
+  }
+}
+
+
+.signup__form {
+  width: 100%;
+  box-shadow: 0 4px 50px 0 #0408131a;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+
+form .form-grid {
+  display: grid;
+  gap: 1.25rem;
+  background-color: #ffffff;
+  padding: 1.8rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+
+.form-field .form-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  height: 2.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  outline: none;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  appearance: none;
+  margin-top: 0.4rem;
+  border: 1.5px solid #f0f0f0;
+  transition: border-color 0.2s ease;
+}
+
+.form-input:focus,
+.form-select:focus {
+  border-color: #2ec4b6;
+  outline: none;
+}
+
+.form-field .select-wrapper {
+  position: relative;
+}
+
+
+.select-wrapper::after {
+  content: "";
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>')
+    no-repeat center;
+  pointer-events: none;
+}
+
+
+input[type="date"] {
+  background: url(./assets/calender.png);
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  background-position: right 0.75rem center;
+  font-family: "Poppins", "Sofia Sana";
+  font-weight: 400;
+}
+
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+
+.form-grid .form-field-full,
+.form-grid .form-field-full {
+  grid-column: span 2;
+}
+
+
+.form-submit {
+  width: 100%;
+  border: none;
+  padding: 15px;
+  color: #ffffff;
+  border-radius: 2px;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: var(--color-custom-green);
+  transition: opacity 0.2s ease;
+  box-shadow: 0 10px 40px 0 #0000001a;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+
+footer {
+  text-align: right;
+  margin-top: -3.8rem;
+  left: 20px;
+}
+
+.form__footer {
+  color: var(--color-text-secondary);
+  font-size: 0.8rem;
+  color: black;
+  padding-right: 9.5rem;
+
+  & a {
+    color: var(--color-custom-green);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+
+@media (max-width: 468px) {
+  main {
+    min-height: auto; 
+    padding-bottom: 3rem;
+  }
+
+  .title__description {
+    & p:nth-child(1) {
+      display: none;
+    }
+    & p:nth-child(2) {
+      display: block;
+    }
+  }
+
+  .form-grid .form-field {
+    grid-column: span 2;
+  }
+
+  .logo {
+    width: 4rem;
+    height: auto;
+  }
+
+  footer {
+    padding: 0.5rem 2rem 2rem 2rem;
+
+
+    & .form__footer {
+      padding-right: 0;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  footer {
+    margin-top: -2.5rem;
+
+    & .form__footer {
+      padding-right: 0;
+      text-align: center;
+    }
+  }
+}
