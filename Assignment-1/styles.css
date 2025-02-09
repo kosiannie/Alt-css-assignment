@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Quicksand", serif;
+    background-color: #000; 
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card-container {
+    width: 54.75em;
+    height: 30em;
+    padding: 50px;
+    background-color: #202020;
+    border-bottom: 16px solid #fff;
+}
+.card {
+    background-color: #fff;
+    border-radius: 0.6em;
+    width: 29em;
+    height: 17em;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 1.875em 0 0 1em;
+}
+
+.card-header {
+    background-color: #ed288b;
+    color: #111;
+    font-family: "Archivo Black", serif;
+    font-weight: bold;
+    padding: 1em;
+    font-size: 1em;
+    width: 24.5em;
+    height: 5.3em;
+    margin: 1em;
+    border-radius: 0.375em;
+    top: -2.5em;
+    left: 1.2em;
+    position: absolute;
+}
+
+.card-content {
+    padding: 4.5em 2em 1em 2em;
+    color: #111;
+    font-size: 1.158em;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: left;
+}
