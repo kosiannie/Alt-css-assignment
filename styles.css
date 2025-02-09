@@ -42,14 +42,15 @@ p {
 
 .wrapper {
     height: 12em;
-    width: 15em;
-    display: flex;
-    flex-direction: row; 
+    width: 50em;
+    display: flex; 
+    flex-direction: row;
     text-align: center;
     align-items: center;
     justify-content: center;
     border-radius: 10px; 
     margin: auto;
+    background-color: #f6c9ce;
     box-shadow: 0 4px 8px rgba(71, 6, 6, 0.2); 
     padding: 20px; 
 }
@@ -57,13 +58,13 @@ p {
 .wrapper a {
     background: #30060b;
     color: white;
-    padding: 10px 20px;
+    padding: 0.625em 1.25em;
     margin: 10px auto;
-    width: 200px;
+    width: 6em;
     text-decoration: none;
     border-radius: 5px;
     transition: 0.3s;
-    font-size: 1.2em; 
+    font-size: 1em; 
     font-weight: bold; 
 }
 

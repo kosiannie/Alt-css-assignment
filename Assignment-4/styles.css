@@ -1,17 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap");
-
-*,
-*::before,
-*::after {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-:root {
-  --color-text-primary: #011c34;
-  --color-text-secondary: #737373;
-  --color-custom-green: #2ec4b6;
 }
 
 body {
@@ -28,11 +18,11 @@ main {
   place-items: center;
 }
 
-header {
-  padding: 2rem 0.5rem 0 1rem;
+.container {
+  padding: 2em 0.5em 0 1em;
 }
 
-header h1,
+.container h1,
 .title__description {
   padding-left: 0.6rem;
   margin-top: 1.5rem;
@@ -83,7 +73,7 @@ form .form-grid {
 .form-field .form-label {
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--color-text-primary);
+  color: #011c34;
 }
 
 .form-input,
@@ -95,7 +85,7 @@ form .form-grid {
   font-size: 0.875rem;
   outline: none;
   font-size: 0.75rem;
-  color: var(--color-text-secondary);
+  color: #737373;
   appearance: none;
   margin-top: 0.4rem;
   border: 1.5px solid #f0f0f0;
@@ -128,7 +118,7 @@ form .form-grid {
 
 
 input[type="date"] {
-  background: url(./assets/calender.png);
+  background: url(calender.png);
   background-repeat: no-repeat;
   background-size: 1rem;
   background-position: right 0.75rem center;
@@ -156,7 +146,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border-radius: 2px;
   font-weight: 500;
   cursor: pointer;
-  background-color: var(--color-custom-green);
+  background-color: #2ec4b6;
   transition: opacity 0.2s ease;
   box-shadow: 0 10px 40px 0 #0000001a;
 
@@ -173,13 +163,13 @@ footer {
 }
 
 .form__footer {
-  color: var(--color-text-secondary);
+  color: #737373;
   font-size: 0.8rem;
   color: black;
   padding-right: 9.5rem;
 
   & a {
-    color: var(--color-custom-green);
+    color: #2ec4b6;
     text-decoration: none;
 
     &:hover {
